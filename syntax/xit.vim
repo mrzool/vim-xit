@@ -71,8 +71,8 @@ syn match xitCheckboxObsoletePriority "\v( *\.*!* ){,1}" nextgroup=xitCheckboxOb
 " by one so that it doesn't include the first char of a title or the "[".
 syn region xitCheckboxObsoleteDesc start="." end=/\v(\[|^[a-zA-Z0-9])/me=e-1 contained contains=xitTag,xitDueDate
 
-" Matches a tag with letters, numbers, _, or -
-syn match xitTag "\v#[a-zA-Z0-9_-]+" contained
+" Matches a tag with letters, numbers, _, ., or -
+syn match xitTag "\v#[a-zA-Z0-9_.-]+" 
 
 " Matches a due date like "-> 2022-03-01". It also supports "-> 2022/03/01" as well as quarters/weeks.
 syn match xitDueDate "\v-\> \d{4}([-/]Q\d|[-/]W\d+|-\d{2}-\d{2}|/\d{2}/\d{2}|-\d{2}|/\d{2})?" contained
